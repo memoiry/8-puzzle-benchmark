@@ -10,8 +10,7 @@ cd 8-puzzle-benchmark
 python 8-puzzle.py
 ```
 
-<center><img src="https://ooo.0o0.ooo//2017//03//21//58d12ac09ebd7.png" width="480"></center>
-
+<p align="center"><img src="https://ooo.0o0.ooo//2017//03//21//58d12ac09ebd7.png" width="480"></p>
 
 
 |Algorithm|Time|Queue size|Correctness|
@@ -21,7 +20,8 @@ python 8-puzzle.py
 |A* with misplaced heuristic|`0.68s`|1537|✔️|
 |A* with misplaced heuristic|`0.09s`|209|✔️|
 
+### Conclusion
 It can be seen that A* with manhattan distance has the best performance, which only needs 0.09s and has a 209 queue size.
 
-IDDFS has a better Queue size computing time reduction compared to BFS
+IDDFS has a better Queue size computing time reduction compared to BFS.
 
