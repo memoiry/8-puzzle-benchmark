@@ -11,7 +11,6 @@ from pygame.locals import *
 import random
 from sys import stdout
 
-
 def find_zero_pos(board):
 	n = len(board)
 	for i in range(n):
@@ -90,6 +89,7 @@ def misplaced(board):
 
 
 def a_star(board, heuristic):
+	global iterations
 	cur_state = [board, 0, []]
 	q = PriorityQueue()
 	q.put((0,cur_state))
@@ -99,7 +99,7 @@ def a_star(board, heuristic):
 	def estimate_cost(state): return state[1] + heuristic(state[0])
 	def queue_entry(state): return (estimate_cost(state), state)
 	while not q.empty():
-		#iterations += 1
+		iterations += 1
 		#if iterations % 1000 == 0:
 		#	print("iterations: ", iterations)
 		cur_board, cost, movement  = q.get()[1]
@@ -115,6 +115,7 @@ def a_star(board, heuristic):
 
 
 def iddfs(board):
+	global iterations
 	iterations = 0
 	for depth in itertools.count():
 		cur_state = [board, 0, []]
@@ -122,7 +123,7 @@ def iddfs(board):
 		q.append(cur_state)
 		visited = {}
 		while len(q) != 0:
-			#iterations += 1
+			iterations += 1
 			#if iterations % 1000 == 0:
 			#	print("iterations : ",iterations)
 			cur_board, cost, movement = q.pop(0)
@@ -140,13 +141,14 @@ def iddfs(board):
 
 
 def bfs(board):
+	global iterations
 	cur_state = [board, 0, []]
 	q = []
 	q.append(cur_state)
 	visited = []
 	iterations = 0
 	while len(q) != 0:
-		#iterations += 1
+		iterations += 1
 		#if iterations % 1000 == 0:
 		#	print("iterations: ", iterations)
 		cur_board, cost, movement = q.pop(0)
@@ -230,11 +232,11 @@ def run_timed(algorithm, board, heuristic = None):
   return result
 
 def print_result(result):
-    global boardG
+    global boardG,iterations
     print(" " + "✓" if check_ans(boardG,result[3]) else "✕")
     stats = [("Execution time",     result[-1]),
            ("Path cost to goal",  "{} moves".format(result[0])),
-           ("Iterations",         result[1]),
+           ("Iterations",         iterations),
            ("Queue size at goal", result[2])]
 
     for s in stats:

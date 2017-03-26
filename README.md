@@ -19,12 +19,12 @@ Comparison of different algorithms used to solve 8-puzzle problem
 
 **Result**
 
-|Algorithm|Time|Queue size|Correctness|
-| --- | --- | --- | --- |
-|Uniformed BFS|`3min15s`|37790|✔️|
-|Iterative Deepening DFS|`34.60s`|8511|✔️|
-|A* with misplaced heuristic|`0.68s`|1537|✔️|
-|A* with misplaced heuristic|`0.09s`|209|✔️|
+|Algorithm|Time|Iterations|Queue size|Correctness|
+| --- | --- | --- | --- | --- |
+|Uniformed BFS|`3min28s`|91830|37790|✔️|
+|Iterative Deepening DFS|`33.17s`|277118|8511|✔️|
+|A* with misplaced heuristic|`0.65s`|2816|1537|✔️|
+|A* with misplaced heuristic|`0.10s`|315|209|✔️|
 
 
 ### Usage
@@ -35,7 +35,7 @@ cd 8-puzzle-benchmark
 python 8-puzzle.py
 ```
 
-<p align="center"><img src="https://ooo.0o0.ooo//2017//03//21//58d12ac09ebd7.png" width="480"></p>
+<p align="center"><img src="https://ooo.0o0.ooo//2017//03//26//58d793c112df7.png" width="480"></p>
 
 ### Conclusion
 It can be seen that A* with manhattan distance has the best performance, which only needs 0.09s and has a 209 queue size.
