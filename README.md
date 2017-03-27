@@ -24,7 +24,7 @@ Comparison of different algorithms used to solve 8-puzzle problem
 |Uniformed BFS|`3min28s`|91830|37790|✔️|
 |Iterative Deepening DFS|`33.17s`|277118|8511|✔️|
 |A* with misplaced heuristic|`0.65s`|2816|1537|✔️|
-|A* with misplaced heuristic|`0.10s`|315|209|✔️|
+|A* with manhattan heuristic|`0.10s`|315|209|✔️|
 
 
 ### Usage
