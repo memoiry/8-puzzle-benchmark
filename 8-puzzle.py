@@ -243,12 +243,18 @@ def print_result(result):
         print("    * {:<20} {:<20}".format(s[0] + ":", str(s[1])))
     print("")
 
+
 def main():
     global goal,boardG
     goal = [[1,2,3],[4,5,6],[7,8,0]]
     #boardG = [[1,2,3],[4,5,6],[7,0,8]]
     boardG = [[7,2,4],[5,0,6],[8,3,1]]
     #board = shuffle_puzzle(goal)
+    #########################################################################
+    ## print function refer to CSIS0270 Artificial intelligence 
+    ##  (Dr. K. P. Chan, University of Hong Kong)
+    ##  "Assignment 1.1 by Joonas Rouhiainen, 3035133686, joonas@hku.hk
+    ##########################################################################
     print("  a) Uninformed breadth-first search")
     print_result(run_timed(bfs, boardG))
 

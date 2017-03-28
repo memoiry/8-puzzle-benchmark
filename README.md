@@ -35,7 +35,6 @@ cd 8-puzzle-benchmark
 python 8-puzzle.py
 ```
 
-<p align="center"><img src="https://ooo.0o0.ooo//2017//03//26//58d793c112df7.png" width="480"></p>
 
 ### Conclusion
 It can be seen that A* with manhattan distance has the best performance, which only needs 0.09s and has a 209 queue size.
